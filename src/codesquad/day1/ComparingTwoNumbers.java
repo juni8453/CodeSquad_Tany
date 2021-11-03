@@ -1,9 +1,9 @@
-package CodeSqurd_Day_1;
+package codesquad.day1;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 두_수_비교하기 {
+public class ComparingTwoNumbers {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;

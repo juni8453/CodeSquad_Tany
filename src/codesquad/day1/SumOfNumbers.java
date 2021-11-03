@@ -1,8 +1,8 @@
-package CodeSqurd_Day_1;
+package codesquad.day1;
 
 import java.io.*;
 
-public class 숫자의_합 {
+public class SumOfNumbers {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
