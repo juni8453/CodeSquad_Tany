@@ -1,8 +1,8 @@
-package CodeSqurd_Day_1;
+package codesquad.day1;
 
 import java.io.*;
 
-public class 사분면_고르기 {
+public class ChoosingQuandrant {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int x = Integer.parseInt(br.readLine());

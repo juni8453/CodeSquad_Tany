@@ -1,8 +1,8 @@
-package Star_package;
+package scanstar;
 
 import java.io.*;
 
-public class 별찍기_5 {
+public class Star5 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

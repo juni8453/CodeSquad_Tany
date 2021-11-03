@@ -1,9 +1,9 @@
-package CodeSqurd_Day_1;
+package codesquad.day1;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 알람시계 {
+public class AlarmClock {
     public static void main(String args[]) throws IOException {
         StringTokenizer st;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
