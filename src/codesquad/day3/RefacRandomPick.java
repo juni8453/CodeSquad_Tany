@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class RefacRandomPick {
     public static void main(String args[]) {
-        List<String> cocoaMembersList = addMembers();
-        List<String> lastMembersList = shuffleMembers(cocoaMembersList);
+        List<String> cocoaMembers = addMembers();
+        List<String> lastMembers = shuffleMembers(cocoaMembers);
 
         Scanner sc = new Scanner(System.in);
         System.out.print("몇 명인가요 ?");
@@ -16,7 +16,7 @@ public class RefacRandomPick {
 
         for (int i = 0; i < pickMemberCount; i++) {
             try {
-                System.out.print(lastMembersList.get(i)+ " ");
+                System.out.print(lastMembers.get(i)+ " ");
 
             } catch (Exception e) {
                 System.out.println();
@@ -28,27 +28,28 @@ public class RefacRandomPick {
     }
 
     public static List<String> addMembers() {
-        List<String> cocoaMemberList = new ArrayList<String>();
-        cocoaMemberList.add("Tany");
-        cocoaMemberList.add("땃쥐");
-        cocoaMemberList.add("피오");
-        cocoaMemberList.add("K");
-        cocoaMemberList.add("mandoo");
-        cocoaMemberList.add("donggi");
-        cocoaMemberList.add("Jerry");
-        cocoaMemberList.add("노리");
-        cocoaMemberList.add("Hoo");
-        cocoaMemberList.add("taksu");
-        cocoaMemberList.add("MK");
+        List<String> cocoaMembers = new ArrayList<String>();
+        cocoaMembers.add("Tany");
+        cocoaMembers.add("땃쥐");
+        cocoaMembers.add("피오");
+        cocoaMembers.add("K");
+        cocoaMembers.add("mandoo");
+        cocoaMembers.add("donggi");
+        cocoaMembers.add("Jerry");
+        cocoaMembers.add("노리");
+        cocoaMembers.add("Hoo");
+        cocoaMembers.add("taksu");
+        cocoaMembers.add("MK");
 
-        return cocoaMemberList;
+        return cocoaMembers;
 
     }
 
-    public static List<String> shuffleMembers(List<String> cocoaMemberList) {
-        Collections.shuffle(cocoaMemberList);
+    public static List<String> shuffleMembers(List<String> cocoaMembers) {
+        Collections.shuffle(cocoaMembers);
 
-        return cocoaMemberList;
+        return cocoaMembers;
 
     }
 }
+
