@@ -64,5 +64,4 @@ public class MakingIndianName {
     public static void output(String resultName) {
         System.out.println("당신의 이름은"+" "+resultName+" "+"입니다.");
     }
-
 }
