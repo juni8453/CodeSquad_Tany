@@ -7,7 +7,7 @@ public class Hero extends Character {
     public int money = 0;
     public int experience = 0;
 
-    Hero() {
+    public Hero() {
 
     }
 
