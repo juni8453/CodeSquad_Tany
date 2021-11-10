@@ -12,18 +12,22 @@ public class AccountBook {
         Scanner sc = new Scanner(System.in);
 
         List<Data> dataList = new ArrayList<>();
-        List<Month> monthList = new ArrayList<>();
+        Month valueMonth = new Month();
 
         System.out.println("가계부를 실행합니다.");
         System.out.println("================");
-        System.out.println("가계부 기능을 선택해주세요.");
+
+        System.out.println("몇 월의 가계부를 사용하시나요 ?");
+        System.out.println("예시) 1월은 1, 2월은 2 ... 12월은 12 기입");
+        int checkMonth = sc.nextInt();
+
+        System.out.println("수행할 기능을 선택해주세요.");
         System.out.println("기입[1] 삭제[2] 수정[3] 월별 출력[4]");
         int menu = sc.nextInt();
-        int count = 1;
 
         // 가계부 기입
         if (menu == 1) {
-            inputData(count, dataList, monthList);
+            inputData(dataList, valueMonth);
         }
 
         // 삭제
@@ -42,11 +46,10 @@ public class AccountBook {
         }
     }
 
-    public void inputData(int count, List<Data> dataList, List<Month> monthList) {
+    public void inputData(List<Data> dataList , Month valueMonth) {
         Scanner sc = new Scanner(System.in);
 
         Data valueData = new Data();
-        Month valueMonth = new Month();
 
         System.out.println("가계부를 기입합니다.");
 
@@ -74,26 +77,25 @@ public class AccountBook {
 
         dataList.add(valueData);
 
-        dataIntoMonth(checkMonth, valueMonth, dataList, valueData ,count, monthList);
+        dataIntoMonth(checkMonth, valueMonth, dataList);
 
     }
 
-    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Data> dataList, Data valueData, int count, List<Month> monthList) {
+    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Data> dataList) {
         Scanner sc = new Scanner(System.in);
         int checkRestart;
 
+        //TODO valueMonth 클래스 생성 시 모든 달의 리스트가 생성되기 때문에 메모리의 낭비가 될 가능성이 높음
+        //TODO 따라서 valueMonth를 넘겨받을 때 해당 월만 넘겨받는 방식으로 구상해보기.
+
         if (checkMonth == 1) {
             valueMonth.setJanuary(dataList);
-            if (count == 1) {
-                monthList.add(valueMonth);
-            }
-            count++;
 
             System.out.println("가계부 기입을 완료했습니다. 더 기입하십니까 ?작성[1] / 종료[2]");
             checkRestart = sc.nextInt();
 
             if (checkRestart == 1) {
-                inputData(count, dataList, monthList);
+                inputData(dataList, valueMonth);
             }
 
             if (checkRestart == 2) {
@@ -101,19 +103,14 @@ public class AccountBook {
             }
         }
 
-        //TODO 2월도 1월처럼 고쳐놓기 카운터는 1로 초기화가 될까 ?
         if (checkMonth == 2) {
             valueMonth.setFebruary(dataList);
-            if (count == 1) {
-                monthList.add(valueMonth);
-            }
-            count++;
 
             System.out.println("가계부 기입을 완료했습니다. 더 기입하십니까 ? 작성[1] / 종료[2]");
             checkRestart = sc.nextInt();
 
             if (checkRestart == 1) {
-                inputData(count, dataList, monthList);
+                inputData(dataList, valueMonth);
             }
 
             if (checkRestart == 2) {
