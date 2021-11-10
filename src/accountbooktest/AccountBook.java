@@ -11,6 +11,8 @@ public class AccountBook {
     public void startAccountBook() {
         Scanner sc = new Scanner(System.in);
 
+        List<Data> dataList = new ArrayList<>();
+
         System.out.println("가계부를 실행합니다.");
         System.out.println("================");
         System.out.println("가계부 기능을 선택해주세요.");
@@ -19,7 +21,7 @@ public class AccountBook {
 
         // 가계부 기입
         if (menu == 1) {
-            inputData();
+            inputData(dataList);
         }
 
         // 삭제
@@ -38,14 +40,12 @@ public class AccountBook {
         }
     }
 
-    public void inputData() {
+    public void inputData(List<Data> dataList) {
         Scanner sc = new Scanner(System.in);
 
         Data valueData = new Data();
-        List<Data> dataList = new ArrayList<>();
-
         Month valueMonth = new Month();
-        List<Month> monthList = new ArrayList<>();
+//        List<Month> monthList = new ArrayList<>();
 
         System.out.println("가계부를 기입합니다.");
 
@@ -73,20 +73,20 @@ public class AccountBook {
 
         dataList.add(valueData);
 
-        dataIntoMonth(checkMonth, valueMonth, monthList, dataList);
+        dataIntoMonth(checkMonth, valueMonth, dataList);
 
     }
 
-    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Month> monthList, List<Data> dataList) {
+    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Data> dataList) {
 
         if (checkMonth == 1) {
             valueMonth.setJanuary(dataList);
-            printData(checkMonth, valueMonth);
+            printData(checkMonth, valueMonth, dataList);
         }
 
         if (checkMonth == 2) {
             valueMonth.setFebruary(dataList);
-            printData(checkMonth, valueMonth);
+            printData(checkMonth, valueMonth, dataList);
         }
 //
 //        if (checkMonth == 3) {
@@ -130,37 +130,42 @@ public class AccountBook {
 //        }
     }
 
-    public void printData(int checkMonth, Month valueMonth) {
+    public void printData(int checkMonth, Month valueMonth ,List<Data> dataList) {
         if (checkMonth == 1) {
             for (int i = 0; i < valueMonth.getJanuary().size(); i++) {
+                System.out.println("January 가계부");
                 System.out.println("[" + (i+1) + "]번째");
                 System.out.print("날짜 :" + valueMonth.getJanuary().get(i).getDate() + " ");
                 System.out.print("간단 메모 :" + valueMonth.getJanuary().get(i).getMemo() + " ");
                 System.out.print("지출 내역 :" + valueMonth.getJanuary().get(i).getOutcome() + " ");
                 System.out.println("잔액 :" + valueMonth.getJanuary().get(i).getBalance());
-                System.out.println("더 작성하시겠습니까 ? 작성[1] / 종료[2]");
-                checkRewrite();
             }
+
+            System.out.println("더 작성하시겠습니까 ? 작성[1] / 종료[2]");
+            checkRewrite(dataList);
         }
 
         if (checkMonth == 2) {
-            for (int i = 0; i < valueMonth.getJanuary().size(); i++) {
+            for (int i = 0; i < valueMonth.getFebruary().size(); i++) {
+                System.out.println("February 가계부");
                 System.out.println("[" + (i+1) + "]번째");
                 System.out.print("날짜 :" + valueMonth.getFebruary().get(i).getDate() + " ");
                 System.out.print("간단 메모 :" + valueMonth.getFebruary().get(i).getMemo() + " ");
                 System.out.print("지출 내역 :" + valueMonth.getFebruary().get(i).getOutcome() + " ");
                 System.out.println("잔액 :" + valueMonth.getFebruary().get(i).getBalance());
-                checkRewrite();
             }
+
+            System.out.println("더 작성하시겠습니까 ? 작성[1] / 종료[2]");
+            checkRewrite(dataList);
         }
     }
 
-    private void checkRewrite() {
+    private void checkRewrite(List<Data> resultData) {
         Scanner sc = new Scanner(System.in);
         int checkReStart = sc.nextInt();
 
         if (checkReStart == 1) {
-            inputData();
+            inputData(resultData);
         }
 
         if (checkReStart == 2) {
