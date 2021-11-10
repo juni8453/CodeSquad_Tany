@@ -12,16 +12,18 @@ public class AccountBook {
         Scanner sc = new Scanner(System.in);
 
         List<Data> dataList = new ArrayList<>();
+        List<Month> monthList = new ArrayList<>();
 
         System.out.println("가계부를 실행합니다.");
         System.out.println("================");
         System.out.println("가계부 기능을 선택해주세요.");
         System.out.println("기입[1] 삭제[2] 수정[3] 월별 출력[4]");
         int menu = sc.nextInt();
+        int count = 1;
 
         // 가계부 기입
         if (menu == 1) {
-            inputData(dataList);
+            inputData(count, dataList, monthList);
         }
 
         // 삭제
@@ -40,12 +42,11 @@ public class AccountBook {
         }
     }
 
-    public void inputData(List<Data> dataList) {
+    public void inputData(int count, List<Data> dataList, List<Month> monthList) {
         Scanner sc = new Scanner(System.in);
 
         Data valueData = new Data();
         Month valueMonth = new Month();
-//        List<Month> monthList = new ArrayList<>();
 
         System.out.println("가계부를 기입합니다.");
 
@@ -73,20 +74,51 @@ public class AccountBook {
 
         dataList.add(valueData);
 
-        dataIntoMonth(checkMonth, valueMonth, dataList);
+        dataIntoMonth(checkMonth, valueMonth, dataList, valueData ,count, monthList);
 
     }
 
-    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Data> dataList) {
+    private void dataIntoMonth(int checkMonth, Month valueMonth, List<Data> dataList, Data valueData, int count, List<Month> monthList) {
+        Scanner sc = new Scanner(System.in);
+        int checkRestart;
 
         if (checkMonth == 1) {
             valueMonth.setJanuary(dataList);
-            printData(checkMonth, valueMonth, dataList);
+            if (count == 1) {
+                monthList.add(valueMonth);
+            }
+            count++;
+
+            System.out.println("가계부 기입을 완료했습니다. 더 기입하십니까 ?작성[1] / 종료[2]");
+            checkRestart = sc.nextInt();
+
+            if (checkRestart == 1) {
+                inputData(count, dataList, monthList);
+            }
+
+            if (checkRestart == 2) {
+                return;
+            }
         }
 
+        //TODO 2월도 1월처럼 고쳐놓기 카운터는 1로 초기화가 될까 ?
         if (checkMonth == 2) {
             valueMonth.setFebruary(dataList);
-            printData(checkMonth, valueMonth, dataList);
+            if (count == 1) {
+                monthList.add(valueMonth);
+            }
+            count++;
+
+            System.out.println("가계부 기입을 완료했습니다. 더 기입하십니까 ? 작성[1] / 종료[2]");
+            checkRestart = sc.nextInt();
+
+            if (checkRestart == 1) {
+                inputData(count, dataList, monthList);
+            }
+
+            if (checkRestart == 2) {
+                return;
+            }
         }
 //
 //        if (checkMonth == 3) {
@@ -142,7 +174,7 @@ public class AccountBook {
             }
 
             System.out.println("더 작성하시겠습니까 ? 작성[1] / 종료[2]");
-            checkRewrite(dataList);
+            checkRewrite(valueMonth);
         }
 
         if (checkMonth == 2) {
@@ -156,16 +188,16 @@ public class AccountBook {
             }
 
             System.out.println("더 작성하시겠습니까 ? 작성[1] / 종료[2]");
-            checkRewrite(dataList);
+            checkRewrite(valueMonth);
         }
     }
 
-    private void checkRewrite(List<Data> resultData) {
+    private void checkRewrite(Month valueMonth) {
         Scanner sc = new Scanner(System.in);
         int checkReStart = sc.nextInt();
 
         if (checkReStart == 1) {
-            inputData(resultData);
+//            inputData();
         }
 
         if (checkReStart == 2) {
