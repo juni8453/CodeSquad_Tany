@@ -11,11 +11,11 @@ public class Month {
     private List<Data> may;
     private List<Data> june;
     private List<Data> july;
-    private List<Data> August;
-    private List<Data> September;
-    private List<Data> October;
-    private List<Data> November;
-    private List<Data> December;
+    private List<Data> august;
+    private List<Data> september;
+    private List<Data> october;
+    private List<Data> november;
+    private List<Data> december;
 
     public List<Data> getJanuary() {
         return january;
@@ -74,42 +74,42 @@ public class Month {
     }
 
     public List<Data> getAugust() {
-        return August;
+        return august;
     }
 
     public void setAugust(List<Data> august) {
-        August = august;
+        this.august = august;
     }
 
     public List<Data> getSeptember() {
-        return September;
+        return september;
     }
 
     public void setSeptember(List<Data> september) {
-        September = september;
+        this.september = september;
     }
 
     public List<Data> getOctober() {
-        return October;
+        return october;
     }
 
     public void setOctober(List<Data> october) {
-        October = october;
+        this.october = october;
     }
 
     public List<Data> getNovember() {
-        return November;
+        return november;
     }
 
     public void setNovember(List<Data> november) {
-        November = november;
+        this.november = november;
     }
 
     public List<Data> getDecember() {
-        return December;
+        return december;
     }
 
     public void setDecember(List<Data> december) {
-        December = december;
+        this.december = december;
     }
 }

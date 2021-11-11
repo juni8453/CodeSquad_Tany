@@ -1,6 +1,6 @@
-package accountbooktest.Months;
+package accountbooktest;
 
-public class February {
+public class Data {
 
     private String date;
     private String memo;
@@ -47,4 +47,5 @@ public class February {
     public int getBalance() {
         return balance;
     }
+
 }
