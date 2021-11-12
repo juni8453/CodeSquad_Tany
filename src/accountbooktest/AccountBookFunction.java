@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class AccountBookFunction {
 
     // Todo 해당 월에 처음 값을 넣을 때 요 메서드 호출
-    public void inputDataInMonth(int checkMonth, List<Data> dataList) {
+    public void inputDataInMonth(int checkMonth, List<Data> dataList, Month valueMonth) {
         AccountBook accountBook = new AccountBook();
         Scanner sc = new Scanner(System.in);
 
         // Todo 1월 필터링
         if (checkMonth == 1) {
-            Month valueMonth = new Month();
+//            Month valueMonth = new Month();
             Data valueData = new Data();
 
             System.out.println("1월의 가계부 작성을 시작합니다.");
@@ -48,6 +48,7 @@ public class AccountBookFunction {
 
             // Todo 종료를 선택했을 때
             if (checkRestart == 2) {
+                // Todo 종료 할 때 메뉴로 되돌아가니까 뭔가 returnCount 같은 변수를 추가하고 하나씩 더해서 (어디에서 더해줄까..)
                 accountBook.startAccountBook(valueMonth);
             }
         } // 최초로 1월에 데이터 삽입하는 메소드
@@ -55,7 +56,7 @@ public class AccountBookFunction {
         // Todo 2월 필터링
         if (checkMonth == 2) {
             // TODO 여기서 valueMonth (Month 객체) 가 새로 생성되기 때문에 리셋되는 건데..
-            Month valueMonth = new Month();
+//            Month valueMonth = new Month();
             Data valueData = new Data();
 
             System.out.println("2월의 가계부 작성을 시작합니다.");
