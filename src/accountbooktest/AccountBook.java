@@ -26,12 +26,10 @@ public class AccountBook {
             System.out.println("1 ~ 12월 중 숫자로 입력받습니다.");
             int checkMonth = sc.nextInt();
 
-            // Todo 1월에 기입할 경우,
             if (checkMonth == 1) {
                 bookFunction.inputDataInMonth(checkMonth, dataList, valueMonth);
             } // 1월 기입
 
-            // Todo 2월에 기입할 경우.
             if (checkMonth == 2) {
                 bookFunction.inputDataInMonth(checkMonth, dataList, valueMonth);
             } // 2월 기입
@@ -77,64 +75,101 @@ public class AccountBook {
             } // 12월 기입
         }
 
-        // Todo 수정 메뉴 선택
+        // 수정 메뉴 선택
         if (menu == 2) {
             System.out.println("몇 월의 가계부를 수정하십니까 ?");
             System.out.println("1 ~ 12월 중 숫자로 입력받습니다.");
             int checkMonth = sc.nextInt();
 
-            // Todo 1월에 수정이 있을 경우,
+            // 1월에 수정이 있을 경우,
             if (checkMonth == 1) {
 
-            } // 1월 수정
+            }
 
-            // Todo 2월에 수정이 있을 경우,
+            // 2월에 수정이 있을 경우,
             if (checkMonth == 2) {
 
-            } // 2월 수정
+            }
 
         }
 
-        // Todo 삭제 메뉴 선택
+        // 삭제 메뉴 선택
         if (menu == 3) {
             System.out.println("몇 월의 가계부에서 삭제하십니까 ?");
             System.out.println("1 ~ 12월 중 숫자로 입력받습니다.");
             int checkMonth = sc.nextInt();
 
-            // Todo 1월에 삭제할 내용이 있을 경우,
+            // 1월에 삭제할 내용이 있을 경우,
             if (checkMonth == 1) {
 
-            } // 1월 삭제
+            }
 
-            // Todo 2월에 삭제할 내용이 있을 경우,
+            // 2월에 삭제할 내용이 있을 경우,
             if (checkMonth == 2) {
 
-            } // 2월 삭제
+            }
 
         }
 
-        // Todo 월별 조회 메뉴 선택
+        // 월별 조회 메뉴 선택
         if (menu == 4) {
             System.out.println("몇 월의 가계부를 조회하십니까 ?");
             System.out.println("1 ~ 12월 중 숫자로 입력받습니다.");
             int checkMonth = sc.nextInt();
 
-            // Todo 1월을 조회하고 싶은 경우,
+            // 1월을 조회하고 싶은 경우,
             if (checkMonth == 1) {
-
-            } // 1월 조회
-
-            // Todo 2월을 조회하고 싶은 경우,
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 2월을 조회하고 싶은 경우,
             if (checkMonth == 2) {
-
-            } // 2월 조회
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 3월을 조회하고 싶은 경우,
+            if (checkMonth == 3) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 4월을 조회하고 싶은 경우.
+            if (checkMonth == 4) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 5월을 조회하고 싶은 경우,
+            if (checkMonth == 5) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 6월을 조회하고 싶은 경우,
+            if (checkMonth == 6) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 7월을 조회하고 싶은 경우,
+            if (checkMonth == 7) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 8월을 조회하고 싶은 경우,
+            if (checkMonth == 8) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 9월을 조회하고 싶은 경우,
+            if (checkMonth == 9) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 10월을 조회하고 싶은 경우,
+            if (checkMonth == 10) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
+            // 11월을 조회하고 싶은 경우,
+            if (checkMonth == 11) {
+                bookFunction.checkEveryMonth(checkMonth,valueMonth);
+            }
+            // 12월을 조회하고 싶은 경우,
+            if (checkMonth == 12) {
+                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+            }
         }
 
-        // Todo 프로그램 종료 메뉴 선택
+        // 프로그램 종료 메뉴 선택
         if (menu == 5) {
             System.out.println("프로그램을 종료합니다.");
-            return;
         }
-
     }
 }
