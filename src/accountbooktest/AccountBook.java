@@ -20,7 +20,6 @@ public class AccountBook {
         System.out.println("기입[1], 수정[2], 삭제[3], 월별 조회[4], 가계부 프로그램 종료[5]");
         int menu = sc.nextInt();
 
-        // Todo 기입 메뉴 선택
         if (menu == 1) {
             System.out.println("몇 월의 가계부를 기입하십니까 ?");
             System.out.println("1 ~ 12월 중 숫자로 입력받습니다.");
@@ -101,12 +100,51 @@ public class AccountBook {
 
             // 1월에 삭제할 내용이 있을 경우,
             if (checkMonth == 1) {
-
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
             }
 
-            // 2월에 삭제할 내용이 있을 경우,
             if (checkMonth == 2) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
 
+            if (checkMonth == 3) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 4) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 5) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 6) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 7) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 8) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 9) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 10) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 11) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
+            }
+
+            if (checkMonth == 12) {
+                bookFunction.deleteMonthData(checkMonth, valueMonth);
             }
 
         }
