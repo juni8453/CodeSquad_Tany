@@ -119,51 +119,51 @@ public class AccountBook {
 
             // 1월을 조회하고 싶은 경우,
             if (checkMonth == 1) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 2월을 조회하고 싶은 경우,
             if (checkMonth == 2) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 3월을 조회하고 싶은 경우,
             if (checkMonth == 3) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 4월을 조회하고 싶은 경우.
             if (checkMonth == 4) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 5월을 조회하고 싶은 경우,
             if (checkMonth == 5) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 6월을 조회하고 싶은 경우,
             if (checkMonth == 6) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 7월을 조회하고 싶은 경우,
             if (checkMonth == 7) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 8월을 조회하고 싶은 경우,
             if (checkMonth == 8) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 9월을 조회하고 싶은 경우,
             if (checkMonth == 9) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 10월을 조회하고 싶은 경우,
             if (checkMonth == 10) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
             // 11월을 조회하고 싶은 경우,
             if (checkMonth == 11) {
-                bookFunction.checkEveryMonth(checkMonth,valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth,valueMonth);
             }
             // 12월을 조회하고 싶은 경우,
             if (checkMonth == 12) {
-                bookFunction.checkEveryMonth(checkMonth, valueMonth);
+                bookFunction.inquiryIntoMonth(checkMonth, valueMonth);
             }
         }
 
