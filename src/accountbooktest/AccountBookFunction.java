@@ -375,234 +375,67 @@ public class AccountBookFunction {
     public void findDataInMonth(int checkMonth, Month valueMonth) {
         AccountBook accountBook = new AccountBook();
         CheckDataInMonth checkData =  new CheckDataInMonth();
+        FindFunction findFunction = new FindFunction();
         Scanner sc = new Scanner(System.in);
 
         // 1월 필터링
         if (checkMonth == 1) {
-            System.out.println("1월의 가계부를 조회합니다.");
-
-            if (valueMonth.getJanuary() == null) {
-                System.out.println("아직 1월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJanuary(valueMonth);
-
-            System.out.println("1월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 2월 필터링
         if (checkMonth == 2) {
-            System.out.println("2월의 가계부를 조회합니다.");
-
-            if (valueMonth.getFebruary() == null) {
-                System.out.println("아직 2월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInFebruary(valueMonth);
-
-            System.out.println("1월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 3월 필터링
         if (checkMonth == 3) {
-            System.out.println("3월의 가계부를 조회합니다.");
-
-            if (valueMonth.getMarch() == null) {
-                System.out.println("아직 3월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInMarch(valueMonth);
-
-            System.out.println("3월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 4월 필터링
         if (checkMonth == 4) {
-            System.out.println("4월의 가계부를 조회합니다.");
-
-            if (valueMonth.getApril() == null) {
-                System.out.println("아직 4월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInApril(valueMonth);
-
-            System.out.println("4월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 5월 필터링
         if (checkMonth == 5) {
-            System.out.println("5월의 가계부를 조회합니다.");
-
-            if (valueMonth.getMay() == null) {
-                System.out.println("아직 5월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInMay(valueMonth);
-
-            System.out.println("5월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 6월 필터링
         if (checkMonth == 6) {
-            System.out.println("6월의 가계부를 조회합니다.");
-
-            if (valueMonth.getJune() == null) {
-                System.out.println("아직 6월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJune(valueMonth);
-
-            System.out.println("6월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 7월 필터링
         if (checkMonth == 7) {
-            System.out.println("7월의 가계부를 조회합니다.");
-
-            if (valueMonth.getJuly() == null) {
-                System.out.println("아직 7월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJuly(valueMonth);
-
-            System.out.println("7월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 8월 필터링
         if (checkMonth == 8) {
-            System.out.println("8월의 가계부를 조회합니다.");
-
-            if (valueMonth.getAugust() == null) {
-                System.out.println("아직 8월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInAugust(valueMonth);
-
-            System.out.println("8월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 9월 필터링
         if (checkMonth == 9) {
-            System.out.println("9월의 가계부를 조회합니다.");
-
-            if (valueMonth.getSeptember() == null) {
-                System.out.println("아직 9월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInSeptember(valueMonth);
-
-            System.out.println("9월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 10월 필터링
         if (checkMonth == 10) {
-            System.out.println("10월의 가계부를 조회합니다.");
-
-            if (valueMonth.getOctober() == null) {
-                System.out.println("아직 10월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInOctober(valueMonth);
-
-            System.out.println("10월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 11월 필터링
         if (checkMonth == 11) {
-            System.out.println("11월의 가계부를 조회합니다.");
-
-            if (valueMonth.getNovember() == null) {
-                System.out.println("아직 11월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInNovember(valueMonth);
-
-            System.out.println("11월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
 
         // 12월 필터링
         if (checkMonth == 12) {
-            System.out.println("12월의 가계부를 조회합니다.");
-
-            if (valueMonth.getDecember() == null) {
-                System.out.println("아직 12월 가계부를 작성하지 않았습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInDecember(valueMonth);
-
-            System.out.println("12월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
-
-            int checkRestart = sc.nextInt();
-            if (checkRestart == 1) {
-                accountBook.startAccountBook(valueMonth);
-            }
+            findFunction.findData(checkMonth, valueMonth);
         }
     }
 }
