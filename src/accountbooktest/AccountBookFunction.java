@@ -308,227 +308,67 @@ public class AccountBookFunction {
 
     // 가계부 삭제 시 호출
     public void deleteDataInMonth(int checkMonth, Month valueMonth) {
-        AccountBook accountBook = new AccountBook();
-        CheckDataInMonth checkData = new CheckDataInMonth();
-        Scanner sc = new Scanner(System.in);
+       DeleteFunction deleteFunction = new DeleteFunction();
 
         // 1월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 1) {
-            System.out.println("1월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getJanuary() == null || valueMonth.getJanuary().size() == 0) {
-                System.out.println("아직 1월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJanuary(valueMonth);
-
-            System.out.println("1월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getJanuary().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 2월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 2) {
-            System.out.println("2월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getFebruary() == null || valueMonth.getFebruary().size() == 0) {
-                System.out.println("아직 2월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInFebruary(valueMonth);
-
-            System.out.println("2월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getJanuary().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 3월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 3) {
-            System.out.println("3월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getMarch() == null || valueMonth.getMarch().size() == 0) {
-                System.out.println("아직 3월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInMarch(valueMonth);
-
-            System.out.println("3월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getMarch().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 4월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 4) {
-            System.out.println("4월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getApril() == null || valueMonth.getApril().size() == 0) {
-                System.out.println("아직 4월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInApril(valueMonth);
-
-            System.out.println("4월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getApril().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 5월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 5) {
-            System.out.println("5월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getMay() == null || valueMonth.getMay().size() == 0) {
-                System.out.println("아직 5월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInMay(valueMonth);
-
-            System.out.println("5월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getMay().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 6월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 6) {
-            System.out.println("6월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getJune() == null || valueMonth.getJune().size() == 0) {
-                System.out.println("아직 6월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJune(valueMonth);
-
-            System.out.println("6월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getJune().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 7월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 7) {
-            System.out.println("7월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getJuly() == null || valueMonth.getJuly().size() == 0) {
-                System.out.println("아직 7월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInJuly(valueMonth);
-
-            System.out.println("7월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getJuly().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 8월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 8) {
-            System.out.println("8월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getAugust() == null || valueMonth.getAugust().size() == 0) {
-                System.out.println("아직 8월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInAugust(valueMonth);
-
-            System.out.println("8월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getAugust().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 9월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 9) {
-            System.out.println("9월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getSeptember() == null || valueMonth.getSeptember().size() == 0) {
-                System.out.println("아직 9월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInSeptember(valueMonth);
-
-            System.out.println("9월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getSeptember().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 10월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 10) {
-            System.out.println("10월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getOctober() == null || valueMonth.getOctober().size() == 0) {
-                System.out.println("아직 10월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInOctober(valueMonth);
-
-            System.out.println("10월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getOctober().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 11월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 11) {
-            System.out.println("11월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getNovember() == null || valueMonth.getNovember().size() == 0) {
-                System.out.println("아직 11월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInNovember(valueMonth);
-
-            System.out.println("11월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getNovember().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
 
         // 12월에서 삭제할 내용이 있을 떄,
         if (checkMonth == 12) {
-            System.out.println("12월의 가계부를 삭제합니다.");
-
-            if (valueMonth.getDecember() == null || valueMonth.getDecember().size() == 0) {
-                System.out.println("아직 12월 가계부에 아무것도 적혀있지 않아 삭제할 내용이 없습니다. 메뉴로 돌아갑니다.");
-                accountBook.startAccountBook(valueMonth);
-            }
-
-            checkData.checkDataInDecember(valueMonth);
-
-            System.out.println("12월 가계부 조회 완료. 몇 번 내용을 삭제하시겠습니까 ?");
-            int checkDeleteIndex = sc.nextInt();
-            valueMonth.getDecember().remove(checkDeleteIndex);
-            System.out.println("[" + checkDeleteIndex + "]번 데이터가 삭제되었습니다.");
-            accountBook.startAccountBook(valueMonth);
+            deleteFunction.deleteData(checkMonth, valueMonth);
         }
-
-
     }
 
     // 가계부 월별 조회 시 호출
