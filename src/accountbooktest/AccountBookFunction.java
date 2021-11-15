@@ -994,7 +994,72 @@ public class AccountBookFunction {
     public void editDataInMonth(int checkMonth, Month valueMonth) {
         AccountBook accountBook = new AccountBook();
         Scanner sc = new Scanner(System.in);
-        
+
+        // 1월에서 수정할 내용이 있을 때,
+        if (checkMonth == 1) {
+            System.out.println("1월 가계부를 수정합니다.");
+
+            if (valueMonth.getJanuary() == null || valueMonth.getJanuary().size() == 0) {
+                System.out.println("아직 1월 가계부에 아무것도 적혀있지 않아 수정할 내용이 없습니다. 메뉴로 돌아갑니다.");
+                accountBook.startAccountBook(valueMonth);
+            }
+
+            for (int i = 0; i < valueMonth.getJanuary().size(); i++) {
+                int totalAmount = valueMonth.getJanuary().get(i).getTotalAmount();
+                String date = valueMonth.getJanuary().get(i).getDate();
+                String memo = valueMonth.getJanuary().get(i).getMemo();
+                int balance = valueMonth.getJanuary().get(i).getBalance();
+                int outcome = valueMonth.getJanuary().get(i).getOutcome();
+
+                System.out.print("[" + (i) + "]" + "번째" + " ");
+                System.out.println("사용 일자 : " + date + " ");
+                System.out.print("간단 메모 : " + memo + " ");
+                System.out.print("지출 가능 금액 : " + totalAmount + " ");
+                System.out.print("지출 금액 : " + outcome + " ");
+                System.out.println("남은 금액 : " + balance);
+                System.out.println("---------------------------------------------------------");
+
+            }
+
+            System.out.println("1월 가계부 조회 완료. 몇 번 내용을 수정하시겠습니까 ?");
+            int checkIndex = sc.nextInt();
+
+            System.out.println("무엇을 수정하십니까? 총액[1], 날짜[2], 간단메모[3], 지출[4]");
+            int editContent = sc.nextInt();
+
+            if (editContent == 1) {
+                System.out.println("총액을 수정하세요.");
+                int editTotalAmount = sc.nextInt();
+                valueMonth.getJanuary().get(checkIndex).setTotalAmount(editTotalAmount);
+                System.out.println("총액이 수정되었습니다. 메뉴로 돌아갑니다.");
+                accountBook.startAccountBook(valueMonth);
+            }
+
+            if (editContent == 2) {
+                System.out.println("날짜를 수정하세요.");
+                String editDate = sc.next();
+                valueMonth.getJanuary().get(checkIndex).setDate(editDate);
+                System.out.println("날짜가 수정되었습니다. 메뉴로 돌아갑니다.");
+                accountBook.startAccountBook(valueMonth);
+            }
+
+            if (editContent == 3) {
+                System.out.println("메모를 수정하세요.");
+                String editMemo = sc.next();
+                valueMonth.getJanuary().get(checkIndex).setMemo(editMemo);
+                System.out.println("메모가 수정되었습니다. 메뉴로 돌아갑니다.");
+                accountBook.startAccountBook(valueMonth);
+            }
+
+            if (editContent == 4) {
+                System.out.println("지출을 수정하세요.");
+                int editOutcome = sc.nextInt();
+                valueMonth.getJanuary().get(checkIndex).setOutcome(editOutcome);
+                System.out.println("지출이 수정되었습니다. 메뉴로 돌아갑니다.");
+                accountBook.startAccountBook(valueMonth);
+            }
+
+        }
     }
 
 
