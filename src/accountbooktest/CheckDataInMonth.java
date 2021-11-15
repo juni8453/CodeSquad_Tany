@@ -1,6 +1,6 @@
 package accountbooktest;
 
-public class CheckData {
+public class CheckDataInMonth {
 
     public void checkDataInJanuary(Month valueMonth) {
         for (int i = 0; i < valueMonth.getJanuary().size(); i++) {
