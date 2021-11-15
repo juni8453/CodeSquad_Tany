@@ -991,7 +991,15 @@ public class AccountBookFunction {
         }
     }
 
-    public void deleteMonthData(int checkMonth, Month valueMonth) {
+    public void editDataInMonth(int checkMonth, Month valueMonth) {
+        AccountBook accountBook = new AccountBook();
+        Scanner sc = new Scanner(System.in);
+        
+    }
+
+
+
+    public void deleteDataInMonth(int checkMonth, Month valueMonth) {
         AccountBook accountBook = new AccountBook();
         Scanner sc = new Scanner(System.in);
 
@@ -1395,7 +1403,7 @@ public class AccountBookFunction {
     }
 
     // 가계부 월별 조회 기능
-    public void inquiryIntoMonth(int checkMonth, Month valueMonth) {
+    public void inquiryDataInMonth(int checkMonth, Month valueMonth) {
         AccountBook accountBook = new AccountBook();
         Scanner sc = new Scanner(System.in);
 
