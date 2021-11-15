@@ -373,10 +373,7 @@ public class AccountBookFunction {
 
     // 가계부 월별 조회 시 호출
     public void findDataInMonth(int checkMonth, Month valueMonth) {
-        AccountBook accountBook = new AccountBook();
-        CheckDataInMonth checkData =  new CheckDataInMonth();
         FindFunction findFunction = new FindFunction();
-        Scanner sc = new Scanner(System.in);
 
         // 1월 필터링
         if (checkMonth == 1) {

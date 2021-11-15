@@ -103,10 +103,6 @@ public class FindFunction {
             checkData.checkDataInDecember(valueMonth);
         }
 
-
-
-
-
         System.out.println(checkMonth + " " +"월 가계부 조회 완료. 메뉴로 돌아가십니까 ? 메뉴로 돌아가기[1]");
 
         int checkRestart = sc.nextInt();
