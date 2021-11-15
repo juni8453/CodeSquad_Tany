@@ -24,8 +24,8 @@ public class Data {
         this.totalAmount = totalAmount;
     }
 
-    public void setBalance(int balance) {
-        this.balance = balance;
+    public void setBalance() {
+        this.balance = totalAmount - outcome;
     }
 
     public String getDate() {
