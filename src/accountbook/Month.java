@@ -1,5 +1,6 @@
 package accountbook;
 
+//import java.time.LocalDate;
 import java.util.List;
 
 public class Month {
@@ -18,7 +19,10 @@ public class Month {
     private List<Data> december;
 
     public List<Data> getJanuary() {
+        // setMonth(int month, List<Data> monthData)
+        // LocalDate.now().month
         return january;
+
     }
 
     public void setJanuary(List<Data> january) {
