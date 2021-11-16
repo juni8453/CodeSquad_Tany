@@ -1,4 +1,4 @@
-package accountbooktest;
+package accountbook;
 
 import java.util.ArrayList;
 import java.util.List;
