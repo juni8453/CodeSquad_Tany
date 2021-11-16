@@ -1,4 +1,4 @@
-package accountbooktest;
+package accountbook;
 
 public class Data {
 
