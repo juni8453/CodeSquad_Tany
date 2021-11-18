@@ -24,7 +24,6 @@ public class GameStart {
         return randomCards.nextInt(21) + 1;
     }
 
-    // 객체를 넘기는 것 보다 player.get ~ , enemy.get 을 넘겨도 된다면 그렇게 바꾸기
     public void checkBetting(Player player, Enemy enemy, int enemyPickCard, int stage) {
         Scanner sc = new Scanner(System.in);
         int playerMoney = player.getPlayerMoney();
@@ -58,25 +57,20 @@ public class GameStart {
 
     public void gameResult(int checkOddEven, int enemyPickCard, int bettingMoney, int stage, Player player, Enemy enemy) {
 
-        // 플레이어가 홀수를 고르고 상대방이 가지고 있는 패가 홀수가 맞을 경우,
-        if (checkOddEven == 1 && enemyPickCard % 2 != 0) {
-            player.setPlayerMoney(player.getPlayerMoney() + bettingMoney);
-            enemy.setEnemyMoney(enemy.getEnemyMoney() - bettingMoney);
-            System.out.println("플레이어의 승리! / 상대방의 패배!");
-            System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
-            System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
+        // 플레이어가 홀수를 고름
+        if (checkOddEven == 1) {
+            // 상대방이 홀수라면 ?
+            if (enemyPickCard % 2 != 0) {
+                player.setPlayerMoney(player.getPlayerMoney() + bettingMoney);
+                enemy.setEnemyMoney(enemy.getEnemyMoney() - bettingMoney);
+                System.out.println("플레이어의 승리! / 상대방의 패배!");
+                System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
+                System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
 
-            // 상대방이 패배했음에도 돈이 남아 있을 경우 게임 재개
-            if (enemy.getEnemyMoney() != 0) {
-                stage += 1;
-                startGame(player, enemy, stage);
+                checkReStartGame(player, enemy, stage);
             }
 
-            if (enemy.getEnemyMoney() == 0) {
-                System.out.println("상대방의 소지금이 0원이므로 게임을 종료합니다.");
-            }
-
-            // 홀수를 골랐지만 상대방이 짝수라면,
+            // 상대방이 짝수라면 ?
             if (enemyPickCard % 2 == 0) {
                 player.setPlayerMoney(player.getPlayerMoney() - bettingMoney);
                 enemy.setEnemyMoney(enemy.getEnemyMoney() + bettingMoney);
@@ -84,27 +78,24 @@ public class GameStart {
                 System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
                 System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
 
-                // 플레이어가 패배했음에도 돈이 남아 있을 경우 게임 재개
-                if (player.getPlayerMoney() != 0) {
-                    stage += 1;
-                    startGame(player, enemy, stage);
-                }
-
-                if (player.getPlayerMoney() == 0) {
-                    System.out.println("플레이어의 소지금이 0원이므로 게임을 종료합니다.");
-                }
+                checkReStartGame(player, enemy, stage);
             }
         }
 
-        // 플레이어가 짝수를 고르고 상대방이 가지고 있는 패가 짝수가 맞을 경우,
-        if (checkOddEven == 2 && enemyPickCard % 2 == 0) {
-            player.setPlayerMoney(player.getPlayerMoney() + bettingMoney);
-            enemy.setEnemyMoney(enemy.getEnemyMoney() - bettingMoney);
-            System.out.println("플레이어의 승리! / 상대방의 패배!");
-            System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
-            System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
+        // 플레이어가 짝수를 고름
+        if (checkOddEven == 2) {
+            // 상대방이 짝수라면 ?
+            if (enemyPickCard % 2 == 0) {
+                player.setPlayerMoney(player.getPlayerMoney() + bettingMoney);
+                enemy.setEnemyMoney(enemy.getEnemyMoney() - bettingMoney);
+                System.out.println("플레이어의 승리! / 상대방의 패배!");
+                System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
+                System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
 
-            // 짝수를 골랐지만 상대방이 홀수라면,
+                checkReStartGame(player, enemy, stage);
+            }
+
+            // 상대방이 홀수라면 ?
             if (enemyPickCard % 2 != 0) {
                 player.setPlayerMoney(player.getPlayerMoney() - bettingMoney);
                 enemy.setEnemyMoney(enemy.getEnemyMoney() + bettingMoney);
@@ -112,10 +103,35 @@ public class GameStart {
                 System.out.println("현재 플레이어의 돈 : " + player.getPlayerMoney());
                 System.out.println("현재 상대방의 돈 : " + enemy.getEnemyMoney());
 
-                if (player.getPlayerMoney() == 0) {
-                    System.out.println("플레이어의 소지금이 0원이므로 게임을 종료합니다.");
-                }
+                checkReStartGame(player, enemy, stage);
+
             }
         }
+    }
+
+    public void checkReStartGame(Player player, Enemy enemy, int stage) {
+
+       if (player.getPlayerMoney() != 0 && enemy.getEnemyMoney() != 0) {
+           stage += 1;
+           startGame(player, enemy, stage);
+       }
+
+        if (player.getPlayerMoney() == 0) {
+            System.out.println("플레이어의 소지금이 0원이므로 게임을 종료합니다.");
+            System.exit(0);
+        }
+
+        if (enemy.getEnemyMoney() == 0) {
+            System.out.println("상대방의 소지금이 0원이므로 새로운 라이벌이 등장합니다.");
+            createNextEnemy(player, enemy ,stage);
+        }
+    }
+
+    // 새로운 라이벌 등장 메소드
+    public void createNextEnemy(Player player, Enemy enemy, int stage) {
+        int enemyMoney = player.getPlayerMoney() * (int) Math.pow(1.2, stage);
+        enemy.setEnemyMoney(enemyMoney);
+
+        startGame(player, enemy, stage);
     }
 }

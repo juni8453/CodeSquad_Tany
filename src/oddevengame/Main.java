@@ -5,6 +5,5 @@ public class Main {
         GameSetting gameSetting = new GameSetting();
         gameSetting.startSetting();
 
-
     }
 }
