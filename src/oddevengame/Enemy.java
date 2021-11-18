@@ -2,13 +2,17 @@ package oddevengame;
 
 public class Enemy {
 
-    private int money;
+    private int enemyMoney;
 
-    public int getMoney() {
-        return money;
+    public Enemy(int enemyMoney) {
+        this.enemyMoney = enemyMoney;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public int getEnemyMoney() {
+        return enemyMoney;
+    }
+
+    public void setEnemyMoney(int enemyMoney) {
+        this.enemyMoney = enemyMoney;
     }
 }

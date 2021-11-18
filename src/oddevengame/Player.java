@@ -2,22 +2,23 @@ package oddevengame;
 
 public class Player {
 
-    private String name;
-    private int money;
+    private String playerName;
+    private int playerMoney;
 
-    public String getName() {
-        return name;
+    public Player(String playerName, int playerMoney) {
+        this.playerName = playerName;
+        this.playerMoney = playerMoney;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public int getMoney() {
-        return money;
+    public int getPlayerMoney() {
+        return playerMoney;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public void setPlayerMoney(int playerMoney) {
+        this.playerMoney = playerMoney;
     }
 }
