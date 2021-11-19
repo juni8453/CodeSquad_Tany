@@ -14,13 +14,13 @@ public class GameStart {
            System.out.println("상대의 현재 소지금은 " + enemy.getEnemyMoney() + "입니다.");
            System.out.println("===================================================");
            System.out.println("현재 스테이지 : " + stage);
-           System.out.println("지금까지 몇명이 도전했습니까 ?" + enemy.getEnemyCount());
+           System.out.println("지금까지 몇명이 도전했습니까 ? " + enemy.getEnemyCount());
 
            int enemyPickCard = groupOfRandomCards();
            System.out.println("Test 용 상대의 숫자 확인 : " + enemyPickCard);
            checkBetting(player, enemy, enemyPickCard, stage);
        }
-    }
+   }
 
     public int groupOfRandomCards() {
         Random randomCards = new Random();
@@ -142,7 +142,7 @@ public class GameStart {
         int enemyMoney = player.getPlayerMoney() * (int) Math.pow(1.2, stage);
         enemy.setEnemyMoney(enemyMoney);
         enemy.setEnemyCount();
-
+        stage = 1;
         startGame(player, enemy, stage);
     }
 }
