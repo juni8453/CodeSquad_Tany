@@ -7,16 +7,19 @@ public class GameStart {
 
    public void startGame(Player player, Enemy enemy, int stage) {
 
-       System.out.println("게임을 시작합니다.");
-       System.out.println("플레이어의 이름은 " + player.getPlayerName() + "입니다.");
-       System.out.println("플레이어의 현재 소지금은 " + player.getPlayerMoney() + "입니다.");
-       System.out.println("상대의 현재 소지금은 " + enemy.getEnemyMoney() + "입니다.");
-       System.out.println("===================================================");
-       System.out.println("현재 스테이지 : " + stage);
+       if (enemy.getEnemyCount() < 9) {
+           System.out.println("게임을 시작합니다.");
+           System.out.println("플레이어의 이름은 " + player.getPlayerName() + "입니다.");
+           System.out.println("플레이어의 현재 소지금은 " + player.getPlayerMoney() + "입니다.");
+           System.out.println("상대의 현재 소지금은 " + enemy.getEnemyMoney() + "입니다.");
+           System.out.println("===================================================");
+           System.out.println("현재 스테이지 : " + stage);
+           System.out.println("지금까지 몇명이 도전했습니까 ?" + enemy.getEnemyCount());
 
-       int enemyPickCard = groupOfRandomCards();
-       System.out.println("Test 용 상대의 숫자 확인 : " + enemyPickCard);
-       checkBetting(player, enemy, enemyPickCard, stage);
+           int enemyPickCard = groupOfRandomCards();
+           System.out.println("Test 용 상대의 숫자 확인 : " + enemyPickCard);
+           checkBetting(player, enemy, enemyPickCard, stage);
+       }
     }
 
     public int groupOfRandomCards() {
@@ -122,6 +125,13 @@ public class GameStart {
         }
 
         if (enemy.getEnemyMoney() == 0) {
+
+            if (enemy.getEnemyCount() >= 8) {
+                System.out.println("라이벌 8명을 모두 물리쳤습니다 !");
+                System.out.println("게임을 종료합니다.");
+                System.exit(0);
+            }
+
             System.out.println("상대방의 소지금이 0원이므로 새로운 라이벌이 등장합니다.");
             createNextEnemy(player, enemy ,stage);
         }
@@ -131,6 +141,7 @@ public class GameStart {
     public void createNextEnemy(Player player, Enemy enemy, int stage) {
         int enemyMoney = player.getPlayerMoney() * (int) Math.pow(1.2, stage);
         enemy.setEnemyMoney(enemyMoney);
+        enemy.setEnemyCount();
 
         startGame(player, enemy, stage);
     }
