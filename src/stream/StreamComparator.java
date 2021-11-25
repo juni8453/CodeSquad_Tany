@@ -19,8 +19,6 @@ public class StreamComparator {
                 .thenComparing(Student::getTotalScore)
                         .thenComparing(Comparator.reverseOrder()))
                 .forEach(System.out::println);
-//                .forEach(s -> System.out.println(s + " "));
-
     }
 }
 
