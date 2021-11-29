@@ -11,7 +11,7 @@ public class FindFirst {
         OptionalInt result1 = stream1.sorted().findFirst();
         System.out.println(result1.getAsInt());
 
-        OptionalInt result2 = stream2.sorted().findFirst();;
+        OptionalInt result2 = stream2.sorted().findFirst();
         System.out.println(result2.getAsInt());
     }
 }
